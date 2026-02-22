@@ -19,7 +19,8 @@ const Header: React.FC = () => {
     };
   }, [scrolled]);
 
-  const navItems = ['About', 'Experience', 'Education', 'Projects', 'Skills', 'Contact'];
+  // const navItems = ['About', 'Experience', 'Education', 'Projects', 'Skills', 'Contact'];
+  const navItems = ['About', 'Experience', 'Education', 'Projects', 'Skills'];
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);
