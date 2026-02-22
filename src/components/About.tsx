@@ -53,7 +53,7 @@ const About: React.FC = () => {
                 <Button
                   variant="secondary"
                   className="w-60 flex items-center bg-blue-950/50 hover:bg-blue-900/60 font-medium h-10"
-                  onClick={() => window.open('/resume.pdf', '_blank')}
+                  onClick={() => window.open('/Ivan_Resume.pdf')}
                 >
                   <Download size={18} />
                   Download Resume
