@@ -11,17 +11,23 @@ const ThreeBackground: React.FC = () => {
 
     // Scene setup
     const scene = new THREE.Scene();
-    
+
     // Camera with improved depth perception for 3D effect
     const camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 2000);
     camera.position.z = 50;
-    
+
     // Renderer with better quality settings
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true,
-      alpha: true,
-      powerPreference: 'high-performance'
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+        powerPreference: 'high-performance'
+      });
+    } catch {
+      // WebGL not available (e.g. VMware / headless environments) — skip 3D background
+      return;
+    }
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000510, 1);
